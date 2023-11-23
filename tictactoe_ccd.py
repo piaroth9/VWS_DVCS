@@ -5,7 +5,7 @@
 
 
 """
-Tic Tac Toe Game
+Tic Tac Toe Game - Clean Code Development
 """
 
 def display_board(board):
