@@ -42,17 +42,15 @@ def make_move(board, row, col, player):
     return False
 
 def tic_tac_toe():
-    """
-    Main function to run the Tic Tac Toe game.
-    """
     board = [[" " for _ in range(3)] for _ in range(3)]
     current_player = "X"
     game_over = False
 
     while not game_over:
         display_board(board)
-        row = int(input(f"Player {current_player}, choose row (1-3): ")) - 1
-        col = int(input(f"Player {current_player}, choose column (1-3): ")) - 1
+        # Setze hier festgelegte Werte für Spielerzüge
+        row = 0  # Hier einen festen Wert für die Reihe setzen (z.B. 0)
+        col = 0  # Hier einen festen Wert für die Spalte setzen (z.B. 0)
 
         if make_move(board, row, col, current_player):
             if check_winner(board, current_player):
@@ -65,6 +63,7 @@ def tic_tac_toe():
                 game_over = True
             else:
                 current_player = "O" if current_player == "X" else "X"
+
 
 if __name__ == "__main__":
     tic_tac_toe()
