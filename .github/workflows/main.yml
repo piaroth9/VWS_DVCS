@@ -1,4 +1,4 @@
-name: Mein CI Workflow
+name: Tic Tac Toe Game CI
 
 on:
   push:
@@ -6,13 +6,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout-Code
       uses: actions/checkout@v2
 
-    - name: Ausführen des Shell-Skripts
+    - name: Setze Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x12.0'
+
+    - name: Installiere Python-Abhängigkeiten
       run: |
-        chmod +x mein_script.sh
-        ./mein_script.sh
+        python -m pip install --upgrade pip
+
+    - name: Ausführen des Tic Tac Toe Python-Skripts
+      run: python code_tictactoe/tictactoe_ccd.py
+
