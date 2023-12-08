@@ -49,13 +49,12 @@ def tic_tac_toe():
 
     while not game_over:
         display_board(board)
-
-        # Setze hier festgelegte Werte für Spielerzüge basierend auf dem move_counter
+        
         row = move_counter // 3  # Jeder Spieler zieht abwechselnd in einer Reihe
         col = move_counter % 3   # Jeder Spieler zieht abwechselnd in einer Spalte
 
         if make_move(board, row, col, current_player):
-            move_counter += 1  # Inkrementiere den Zähler nach einem gültigen Zug
+            move_counter += 1 
 
             if check_winner(board, current_player):
                 display_board(board)
